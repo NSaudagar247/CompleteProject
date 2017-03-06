@@ -1,0 +1,22 @@
+[
+	{
+		"Name": "Ajinkya Dharap",
+		"RollNo": 101,
+		"checked": true
+	},
+	{
+		"Name": "Pradeep Kumar",
+		"RollNo": 102,
+		"checked": true
+	},
+	{
+		"Name": "Shravan Pandita",
+		"RollNo": 103,
+		"checked": true
+	},
+	{
+		"Name": "Rahul Yadao",
+		"RollNo": 104,
+		"checked": true
+	}
+]

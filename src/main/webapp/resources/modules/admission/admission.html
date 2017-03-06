@@ -1,0 +1,73 @@
+<div class="row col-md-10">
+  <form name="myForm" ng-controller="AdmissionCtrl" >
+	<h2>Admission Form</h2>
+	
+	<div class="form-group">
+	    <label for="email">{{ myFieldLabel2 }}</label>
+   		<select ng-model="year" class="form-control">
+			<option ng-repeat="year in years" value="{{year}}">{{year}}</option>
+		</select>	
+	</div>
+	<div class="form-group">
+	    <label for="email">{{ myFieldLabel3 }}</label>
+   		<input type="text" name="fname" id="fname" ng-model="fname" class="form-control" required />
+   		<span ng-show="myForm.fname.$dirty && myForm.fname.$error.required" class="help-block">First Name is required</span>
+	</div>
+	<div class="form-group">
+	    <label for="email">{{ myFieldLabel4 }}</label>
+   		<input type="text" name="lname" id="lname" ng-model="lname" class="form-control" required />
+   		<span ng-show="myForm.lname.$dirty && myForm.lname.$error.required" class="help-block">Last Name is required</span>
+	</div>
+	<div class="form-group">
+	    <label for="email">{{ myFieldLabel5 }}</label>
+		<select data-ng-model="option1" class="form-control" data-ng-options="option for option in options1" data-ng-change="getOptions2()" required>
+	    	<option value="">Please select one standard</option>
+	    </select>
+	    <span ng-show="myForm.option1.$dirty && myForm.option1.$error.required" class="help-block">Please select one standard</span>
+	</div>
+	<div class="form-group">
+	    <label for="email">{{ myFieldLabel6 }}</label>
+    	<select data-ng-model="option2" class="form-control" data-ng-options="option for option in options2" data-ng-change="getSeatCount()" >
+	    </select>
+	</div>
+	<div class="form-group">
+	    <label for="email">{{ myFieldLabel }}</label>
+		 {{ TotalSeatCount }}
+	</div>
+	<div class="form-group">
+	    <label for="email">{{ myFieldLabel1 }}</label>
+		 {{ AvailableSeatCount }}
+	</div>
+	<div class="form-group pull-right">
+   		<button type="submit" ng-disabled="myForm.$invalid || dataLoading" class="btn btn-danger" ng-click="ButtonClick()">Submit</button>
+        <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+	</div>
+	<div class="form-group">
+		 {{Message}}
+	</div>
+<br>    
+    <table class="table table-striped" > 
+                    <tr> 
+                        <th>Roll No</th> 
+                        <th>FirstName</th> 
+                        <th>LastName</th> 
+                        <th>Standard</th> 
+                        <th>Division</th>   
+                        <th>Academic Year</th>      
+                    </tr>  
+
+                    <tr ng-repeat = "student in students"> 
+                        <td>{{ student.RollNo}}</td> 
+                        <td>{{ student.FirstName}}</td> 
+                        <td>{{ student.LastName}}</td> 
+                        <td>{{ student.Standard}}</td> 
+                        <td>{{ student.Division}}</td> 
+                        <td>{{ student.AcademicYear}}</td> 
+                    </tr> 
+
+                </table>
+
+    					
+    
+  </form>
+</div>

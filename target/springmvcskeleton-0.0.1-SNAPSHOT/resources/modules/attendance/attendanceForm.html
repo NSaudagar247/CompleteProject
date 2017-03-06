@@ -1,0 +1,24 @@
+
+<form id="form" ng-submit="markStudentAttendance()">
+	<h2>Mark Student Attendance</h2>
+	<div ng-controller="attendanceController">
+		<div>
+			<label>Standards: </label> <select ng-model="selectedStd"
+				ng-options="standard.StdName for standard in standards"
+				ng-init="getStdData()" ng-click="showData()">
+			</select>
+		</div>
+		<div ng-show="error" class="alert alert-danger">{{error}}</div>
+		<br />
+		<div ng-repeat="student in students" ng-show='stuList'>
+			<input ng-model="student.checked" type="checkbox"
+				value="{{student.RollNo}}" ng-click="Checked()" /> <label>{{student.Name}}({{student.RollNo}})</label>
+		</div>
+		<br /> <br /> <span ng-show='spn'>Absent Students:
+			{{Checkedval}}</span> <br /> <br />
+	</div>
+
+	<p>
+		<a href="#/">Go Back</a>
+	</p>
+</form>

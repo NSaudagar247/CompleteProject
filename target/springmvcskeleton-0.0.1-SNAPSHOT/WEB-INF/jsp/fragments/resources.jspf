@@ -1,0 +1,38 @@
+<%-- jstl defined resources --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%-- Built-in Scripts --%>
+	<c:url value="/js/jquery.js" var="jqueryJs" />
+	<c:url value="/js/bootstrap.js" var="bootstrapJs" />
+	<c:url value="/js/angular.js" var="angularJs" />
+	<c:url value="/js/angular-route.js" var="angularRouteJs" />
+	<c:url value="/js/ui-bootstrap-tpls.js" var="uiBootstrapTplsJs" />
+	<c:url value="/js/angular-animate.js" var="angularAnimateJs" />
+	<c:url value="/js/angular-modal-service.js" var="angularModalServiceJs" />
+	<c:url value="/js/angular-cookies.js" var="angularCookiesJs" />
+	<c:url value="/js/dirPagination.js" var="dirPaginationJs" />
+	
+
+<%-- Custom Scripts --%>
+	<c:url value="/js/app.js" var="appJs" />
+	<c:url value="/js/editor.js" var="editorJs" />
+	<c:url value="/modules/login/loginController.js" var="loginCtrlJs" />
+	<c:url value="/modules/inquiry/inquiryController.js" var="inquiryCtrlJs" />
+	<c:url value="/modules/inquiry/inquiryService.js" var="inquiryServiceJs" />
+	<c:url value="/modules/blog/blogController.js" var="blogCtrlJs" />
+	<c:url value="/modules/notice/noticeController.js" var="noticeCtrlJs" />
+	<c:url value="/modules/notice/noticeService.js" var="noticeServiceJs" />
+	<c:url value="/modules/admission/admissionController.js" var="admissionCtrlJs" />
+	<c:url value="/modules/attendance/attendanceController.js" var="attendanceCtrlJs" />
+
+<%-- Built-in CSS --%>
+	<c:url value="/css/bootstrap.css" var="bootstrapCss" />
+	<c:url value="/css/font-awesome.css" var="fontAwesomeCss" />
+
+<%-- Custom CSS --%>
+	<c:url value="/css/style.css" var="styleCss" />
+	<c:url value="/css/editor.css" var="editorCss" />
+
+<%-- Images --%>
+	<c:url value="/img/ATOS Logo.png" var="ATOSLogoPng" />
+	

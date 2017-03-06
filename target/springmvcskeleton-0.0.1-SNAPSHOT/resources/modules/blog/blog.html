@@ -1,0 +1,75 @@
+    
+<h2>College Blogs</h2>
+
+<div class="container">
+  
+  <div class="row col-md-10" id="pwd-container">
+
+<p class="pull-right"><a class="btn btn-primary btn-md" href role="button" ng-click="show()">Create a Blog</a></p>
+<!-- <p>{{message}}</p> -->
+<!-- <p>{{blog}}</p> -->
+
+	<div class="list-group" ng-repeat="blog in blogs">
+		<div class="box1">
+			<h3><a href>{{blog.title}}</a></h3>
+			<h5 class="">By {{blog.writer}} - Uploaded on <cite title="Source Title">{{blog.writtenOn | date:'dd MMM, yy HH:mm'}}</cite></h5>
+			<div class="data">
+			    <p>{{blog.story}}</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+		
+</div></div>	     
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#blogStory").Editor();
+});
+</script>
+
+<script type="text/ng-template" id="addBlog.html">
+
+<div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+				<button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Add College Blog</h4>
+              </div>
+              <div class="modal-body">
+        <form name="blogForm" method="post"  role="form" ng-submit="add_blog()">
+		<div ng-show="error" class="alert alert-danger">{{error}}</div>
+		<div ng-show="status" class="alert alert-success">{{status}}</div>
+		
+		  <div class="form-group">
+		    <label for="blogTitle">Blog Title:</label>
+		    <input class="form-control" placeholder="Enter Blog Title" id="blogTitle" name="blogTitle" ng-model="blog.title" required>
+		  </div>
+		  <div class="form-group">
+		   <span style="color:red" ng-show="blogForm.blogTitle.$dirty && blogForm.blogTitle.$invalid">
+				<span ng-show="blogForm.blogTitle.$error.required">Blog Title is required.</span>
+			</span>
+		  </div>
+		
+		  <div class="form-group">
+		     <label for="blogStory">Blog Story:</label>
+		  	 <textarea id="blogStory" name="blogStory" ng-model="blog.story" placeholder="Enter Blog Story" 
+		  	 	class="form-control input-no-width rounded shaded left clearboth" required></textarea> 
+		  </div>
+		  <div class="form-group">
+		    <span style="color:red" ng-show="blogForm.blogStory.$dirty && blogForm.blogStory.$invalid">
+				<span ng-show="blogForm.blogStory.$error.required">Blog Story is required.</span>
+			</span>
+		  </div>
+		
+		</form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="submit" ng-click="add_blog()" class="btn btn-primary" data-dismiss="modal" ng-disabled="blogForm.blogTitle.$invalid || blogForm.blogStory.$invalid">Add Blog</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</script>
